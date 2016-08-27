@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxtc.ccweb.model.User">
+    
+    <resultMap id="userInforesultMap" type="com.sxtc.ccweb.model.User">
+        <id column="OP_ID" property="userId" />
+        <result property="userName" column="OP_NAME"/>
+        <result property="userPwd" column="OP_PSW"/>
+    </resultMap>
+
+    <select id="findAllUsers" resultMap="userInforesultMap">
+        SELECT OP_ID,OP_NAME,OP_PSW FROM NS_OPERATOR_INFO
+    </select>
+
+</mapper>
