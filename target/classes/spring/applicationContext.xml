@@ -6,6 +6,12 @@
 
     <context:component-scan base-package="com.sxtc.ccweb"/>
 
+    <!--    隐式地向 Spring 容器注册 AutowiredAnnotationBeanPostProcessor、CommonAnnotationBeanPostProcessor、PersistenceAnnotationBeanPostProcessor、RequiredAnnotationBeanPostProcessor   -->
+    <!--<context:annotation-config/>-->
+
+    <!--  通过Spring管理AnnotationBeanConfigurerAspect切面 -->
+    <!--<context:spring-configured/>-->
+
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
         <!--  设置数据库连接参数 -->
         <property name="jdbcUrl" value="jdbc:oracle:thin:@192.168.1.208:1521:orcl"/>
@@ -32,59 +38,53 @@
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
     </bean>
 
-    <!--&lt;!&ndash; 类型定义 &ndash;&gt;-->
-    <!--<bean id="user" class="com.sxtc.ccweb.model.User"/>-->
-
-    <!--&lt;!&ndash; DAO类定义 &ndash;&gt;-->
-    <!--<bean id="nsOperaterDao" class="com.sxtc.ccweb.dao.impl.NsOperaterImpl">-->
-    <!--<property name="sqlSessionFactory" ref="sqlSessionFactory"/>-->
-    <!--</bean>-->
 
 
-    <!--<bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">-->
-        <!--<property name="maxTotal" value="10"/>-->
-        <!--<property name="maxIdle" value="10"/>-->
-        <!--<property name="minIdle" value="2"/>-->
-        <!--<property name="maxWaitMillis" value="15000"/>-->
-        <!--<property name="minEvictableIdleTimeMillis" value="300000"/>-->
-        <!--<property name="numTestsPerEvictionRun" value="3"/>-->
-        <!--<property name="timeBetweenEvictionRunsMillis" value="60000"/>-->
-        <!--<property name="testOnBorrow" value="true"/>-->
-        <!--<property name="testOnReturn" value="true"/>-->
-        <!--<property name="testWhileIdle" value="true"/>-->
-    <!--</bean>-->
 
-    <!--<bean id="jedisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"-->
-          <!--destroy-method="destroy">-->
-        <!--<property name="hostName" value="192.168.1.208"/>-->
-        <!--<property name="port" value="6379"/>-->
-        <!--<property name="timeout" value="15000"/>-->
-        <!--<property name="database" value="0"/>-->
-        <!--<property name="password" value=""/>-->
-        <!--<property name="usePool" value="true"/>-->
-        <!--<property name="poolConfig" value="jedisPoolConfig"/>-->
-    <!--</bean>-->
+    <bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
+        <property name="maxTotal" value="10"/>
+        <property name="maxIdle" value="10"/>
+        <property name="minIdle" value="2"/>
+        <property name="maxWaitMillis" value="15000"/>
+        <property name="minEvictableIdleTimeMillis" value="300000"/>
+        <property name="numTestsPerEvictionRun" value="3"/>
+        <property name="timeBetweenEvictionRunsMillis" value="60000"/>
+        <property name="testOnBorrow" value="true"/>
+        <property name="testOnReturn" value="true"/>
+        <property name="testWhileIdle" value="true"/>
+    </bean>
 
-    <!--&lt;!&ndash; redis template definition p表示对该bean里面的属性进行注入，格式为p:属性名=注入的对象 效果与在bean里面使用<property>标签一样 &ndash;&gt;-->
-    <!--<bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate"-->
-          <!--p:connectionFactory-ref="jedisConnectionFactory">-->
-        <!--<property name="keySerializer">-->
-            <!--<bean class="org.springframework.data.redis.serializer.StringRedisSerializer"/>-->
-        <!--</property>-->
-        <!--<property name="hashKeySerializer">-->
-            <!--<bean class="org.springframework.data.redis.serializer.StringRedisSerializer"/>-->
-        <!--</property>-->
-        <!--<property name="valueSerializer">-->
-            <!--<bean class="org.springframework.data.redis.serializer.StringRedisSerializer"/>-->
-        <!--</property>-->
-        <!--<property name="hashValueSerializer">-->
-            <!--<bean class="org.springframework.data.redis.serializer.StringRedisSerializer"/>-->
-        <!--</property>-->
-    <!--</bean>-->
+    <bean id="jedisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"
+          destroy-method="destroy">
+        <property name="hostName" value="192.168.1.208"/>
+        <property name="port" value="6379"/>
+        <property name="timeout" value="15000"/>
+        <property name="database" value="0"/>
+        <property name="password" value=""/>
+        <property name="usePool" value="true"/>
+        <property name="poolConfig" ref="jedisPoolConfig"/>
+    </bean>
 
-    <!--&lt;!&ndash;   对 String  操作的封装&ndash;&gt;-->
-    <!--<bean id="stringRedisTemplete" class="org.springframework.data.redis.core.StringRedisTemplate"-->
-          <!--p:connectionFactory-ref="jedisConnectionFactory"/>-->
-    <!---->
+    <!-- redis template definition p表示对该bean里面的属性进行注入，格式为p:属性名=注入的对象 效果与在bean里面使用<property>标签一样 -->
+    <bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate"
+          p:connectionFactory-ref="jedisConnectionFactory">
+        <property name="keySerializer">
+            <bean class="org.springframework.data.redis.serializer.StringRedisSerializer"/>
+        </property>
+        <property name="hashKeySerializer">
+            <bean class="org.springframework.data.redis.serializer.StringRedisSerializer"/>
+        </property>
+        <property name="valueSerializer">
+            <bean class="org.springframework.data.redis.serializer.StringRedisSerializer"/>
+        </property>
+        <property name="hashValueSerializer">
+            <bean class="org.springframework.data.redis.serializer.StringRedisSerializer"/>
+        </property>
+    </bean>
+
+    <!--   对 String  操作的封装-->
+    <bean id="stringRedisTemplete" class="org.springframework.data.redis.core.StringRedisTemplate"
+          p:connectionFactory-ref="jedisConnectionFactory"/>
+
 
 </beans>

@@ -1,6 +1,8 @@
 package com.sxtc.ccweb.rest;
 
+import com.sxtc.ccweb.model.AgentStatusInfo;
 import com.sxtc.ccweb.model.User;
+import com.sxtc.ccweb.redis.service.AgentStatusService;
 import com.sxtc.ccweb.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.FieldRetrievingFactoryBean;
@@ -19,10 +21,15 @@ import java.util.List;
 @Path("user")
 public class UserRest {
 
+    @Autowired
+    AgentStatusService agentStatusService;
+
     @GET
     @Path("/test")
     @Produces(MediaType.TEXT_PLAIN)
     public String userTest() {
+        AgentStatusInfo agentStatusInfo = new AgentStatusInfo(1, 2, "测试");
+        agentStatusService.saveStatus(agentStatusInfo);
         return "OK";
     }
 
@@ -33,12 +40,12 @@ public class UserRest {
     @Path("/query")
     @Produces(MediaType.TEXT_PLAIN)
     public String queryUser() {
-        List<User> datas=userService.findUsers();
-        String dataStr=datas.size()+"--";
-        for (User user : datas){
-            dataStr+=user.getUserId()+","+user.getUserName()+","+user.getUserPwd()+"---";
+        List<User> datas = userService.findUsers();
+        String dataStr = datas.size() + "--";
+        for (User user : datas) {
+            dataStr += user.getUserId() + "," + user.getUserName() + "," + user.getUserPwd() + "---";
         }
-        return  dataStr;
+        return dataStr;
     }
 
 }
