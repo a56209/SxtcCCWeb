@@ -1,6 +1,7 @@
 package com.sxtc.ccweb.service;
 
 import com.sxtc.ccweb.model.User;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
