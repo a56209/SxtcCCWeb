@@ -53,4 +53,13 @@ public class AgentStatusInfo implements Serializable {
         this.agentStatus = agentStatus;
         this.statusInfo = statusInfo;
     }
+
+    @Override
+    public String toString() {
+        return "AgentStatusInfo{" +
+                "agentId=" + agentId +
+                ", agentStatus=" + agentStatus +
+                ", statusInfo='" + statusInfo + '\'' +
+                '}';
+    }
 }

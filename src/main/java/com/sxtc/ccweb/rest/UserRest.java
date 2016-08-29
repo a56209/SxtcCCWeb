@@ -28,8 +28,11 @@ public class UserRest {
     @Path("/test")
     @Produces(MediaType.TEXT_PLAIN)
     public String userTest() {
-        AgentStatusInfo agentStatusInfo = new AgentStatusInfo(1, 2, "测试");
-        agentStatusService.saveStatus(agentStatusInfo);
+        //AgentStatusInfo agentStatusInfo = new AgentStatusInfo(1, 2, "测试");
+        //agentStatusService.saveStatus(agentStatusInfo);
+        //return "OK";
+       // return agentStatusService.getAgentDetailInfo("1").toString();
+        agentStatusService.deleteAgentInfo("1");
         return "OK";
     }
 
