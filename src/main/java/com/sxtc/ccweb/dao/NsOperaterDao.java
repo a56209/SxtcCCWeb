@@ -14,7 +14,16 @@ import java.util.List;
 
 public interface NsOperaterDao {
 
-    public List<User> findAllUsers();
+    List<User> findAllUsers();
+
+    User findUserById(Integer userId);
+
+    int addUser(User user);
+
+    int updateUser(User user);
+
+    int delUser(Integer userId);
+
 
 //    @Select(" SELECT OP_ID,OP_NAME,OP_PSW FROM NS_OPERATOR_INFO ")
 //    @Results({

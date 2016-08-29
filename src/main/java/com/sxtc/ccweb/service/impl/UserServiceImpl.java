@@ -20,4 +20,20 @@ public class UserServiceImpl implements UserService {
     public List<User> findUsers() {
         return nsOperaterDao.findAllUsers();
     }
+
+    public User findUserById(Integer userId) {
+        return nsOperaterDao.findUserById(userId);
+    }
+
+    public void addUserInfo(User user) {
+        nsOperaterDao.addUser(user);
+    }
+
+    public void updateUserInfo(User user) {
+        nsOperaterDao.updateUser(user);
+    }
+
+    public void deleteUserInfo(Integer userId) {
+        nsOperaterDao.delUser(userId);
+    }
 }

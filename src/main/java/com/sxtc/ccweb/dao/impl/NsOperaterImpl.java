@@ -20,4 +20,24 @@ public class NsOperaterImpl extends CCSqlDaoSupport implements NsOperaterDao {
         return listdta;
     }
 
+    public User findUserById(Integer userId) {
+        SqlSession session = getSqlSession();
+        return session.selectOne("findUserById", userId);
+    }
+
+    public int addUser(User user) {
+        SqlSession session = getSqlSession();
+        return session.insert("addNewUser", user);
+    }
+
+    public int updateUser(User user) {
+        SqlSession session = getSqlSession();
+        return session.update("updateUser", user);
+    }
+
+    public int delUser(Integer userId) {
+        SqlSession session = getSqlSession();
+        return session.delete("delUser", userId);
+    }
+
 }

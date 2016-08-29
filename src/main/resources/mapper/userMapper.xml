@@ -2,9 +2,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sxtc.ccweb.model.User">
-    
+
     <resultMap id="userInforesultMap" type="com.sxtc.ccweb.model.User">
-        <id column="OP_ID" property="userId" />
+        <id column="OP_ID" property="userId"/>
         <result property="userName" column="OP_NAME"/>
         <result property="userPwd" column="OP_PSW"/>
     </resultMap>
@@ -12,5 +12,26 @@
     <select id="findAllUsers" resultMap="userInforesultMap">
         SELECT OP_ID,OP_NAME,OP_PSW FROM NS_OPERATOR_INFO
     </select>
+
+    <select id="findUserById" resultMap="userInforesultMap" parameterType="Integer">
+        SELECT OP_ID,OP_NAME,OP_PSW FROM NS_OPERATOR_INFO WHERE OP_ID=#{userid}
+    </select>
+
+    <insert id="addNewUser" parameterType="com.sxtc.ccweb.model.User" keyProperty="userId" useGeneratedKeys="false">
+         INSERT INTO NS_OPERATOR_INFO (OP_ID,OP_NAME,APP_ID,ROLE_ID,IS_ACTIVE,OP_INDEX,OP_PSW)  SELECT NVL(MAX(OP_ID),0)+1,#{userName},0,1,1,1,#{userPwd} FROM NS_OPERATOR_INFO
+    </insert>
+
+    <update id="updateUser" parameterType="com.sxtc.ccweb.model.User" keyProperty="userId">
+        UPDATE NS_OPERATOR_INFO
+        <trim prefix="set" suffixOverrides=",">
+            <if test="userName!=null and userName!=''">OP_NAME=#{userName},</if>
+            <if test="userPwd!=null and userPwd !=''">OP_PSW=#{userPwd}</if>
+        </trim>
+        WHERE OP_ID=#{userId}
+    </update>
+
+    <delete id="delUser" parameterType="java.lang.Integer">
+         DELETE FROM NS_OPERATOR_INFO WHERE OP_ID=#{userId}
+    </delete>
 
 </mapper>

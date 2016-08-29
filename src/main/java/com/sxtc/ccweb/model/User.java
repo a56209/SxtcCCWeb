@@ -1,15 +1,28 @@
 package com.sxtc.ccweb.model;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import java.io.Serializable;
+
 /**
  * Created by Administrator on 2016/8/27.
  */
-public class User {
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
+public class User implements Serializable {
 
+    private static final long serialVersionUID = 3700177119347108473L;
+
+    @XmlElement(name = "userId")
     private Integer userId;
 
+    @XmlElement(name = "userName")
     private String userName;
 
-    private  String userPwd;
+    @XmlElement(name = "userPwd")
+    private String userPwd;
 
     public String getUserName() {
         return userName;
