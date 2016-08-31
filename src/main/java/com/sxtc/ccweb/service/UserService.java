@@ -16,7 +16,7 @@ public interface UserService {
 
     void addUserInfo(User user);
 
-    void updateUserInfo(User user);
+    void updateUserInfo(User user) throws Exception;
 
     void deleteUserInfo(Integer userId);
 }

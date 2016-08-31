@@ -3,11 +3,13 @@ package com.sxtc.ccweb.rest;
 import com.sxtc.ccweb.model.User;
 import com.sxtc.ccweb.redis.service.AgentStatusService;
 import com.sxtc.ccweb.service.UserService;
+import com.sxtc.ccweb.service.impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -22,7 +24,7 @@ import java.util.List;
 public class UserRest {
 
     @Autowired
-    AgentStatusService agentStatusService;
+    private AgentStatusService agentStatusService;
 
     @GET
     @Path("/test")
@@ -37,7 +39,7 @@ public class UserRest {
     }
 
     @Autowired
-    UserService userService;
+    public UserServiceImpl userService;
 
     @GET
     @Path("/query")
@@ -52,7 +54,7 @@ public class UserRest {
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
     public Response findById(@PathParam("userid") Integer userid) {
         User userinfo = userService.findUserById(userid);
-        return Response.status(200).entity(userinfo).build();
+        return Response.status(Response.Status.OK).entity(userinfo).build();
     }
 
     @POST
@@ -64,13 +66,13 @@ public class UserRest {
     }
     //     /SxCCWeb/user
     //Content-Type:application/json
-    //{"userId":"0","userName":"程小尧","userPwd":"sz@88931600"}
+    //{"userId":"0","userName":"程小尧","userPwd":"123456"}
 
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.TEXT_HTML)
     @Transactional
-    public Response updateUserInfo(@RequestBody User user) {
+    public Response updateUserInfo(@RequestBody User user) throws Exception {
         userService.updateUserInfo(user);
         return Response.status(201).entity("更新成功!").build();
     }
@@ -79,7 +81,7 @@ public class UserRest {
     @Path("{userid}")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.TEXT_HTML)
-    public Response updateUserInfo(@PathParam("userid") Integer userid, @RequestBody User user) {
+    public Response updateUserInfo(@PathParam("userid") Integer userid, @RequestBody User user) throws Exception {
         if (userid < 0)
             return Response.noContent().build();
         userService.updateUserInfo(user);
@@ -93,4 +95,14 @@ public class UserRest {
         userService.deleteUserInfo(userId);
         return Response.status(Response.Status.NO_CONTENT).entity("删除成功!").build();
     }
+
+    @PUT
+    @Path("trans")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.TEXT_HTML)
+    public Response updateUserInfos(@RequestBody List<User> users) throws Exception {
+        userService.updateUserInfos(users);
+        return Response.status(200).entity("批量更新成功!" + users.size()).build();
+    }
+
 }

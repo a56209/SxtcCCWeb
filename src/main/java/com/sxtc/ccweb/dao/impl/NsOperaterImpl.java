@@ -5,6 +5,8 @@ import com.sxtc.ccweb.dao.NsOperaterDao;
 import com.sxtc.ccweb.model.User;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -35,6 +37,7 @@ public class NsOperaterImpl extends CCSqlDaoSupport implements NsOperaterDao {
         return session.update("updateUser", user);
     }
 
+//    @Transactional(readOnly = false, propagation = Propagation.SUPPORTS)
     public int delUser(Integer userId) {
         SqlSession session = getSqlSession();
         return session.delete("delUser", userId);

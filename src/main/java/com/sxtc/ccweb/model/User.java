@@ -1,5 +1,7 @@
 package com.sxtc.ccweb.model;
 
+import org.springframework.beans.factory.annotation.Required;
+
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;

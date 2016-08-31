@@ -45,6 +45,6 @@
     </servlet-mapping>
 
     <welcome-file-list>
-        <welcome-file>/readme.txt</welcome-file>
+        <welcome-file>readme.txt</welcome-file>
     </welcome-file-list>
 </web-app>
