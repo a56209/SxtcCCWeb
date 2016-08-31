@@ -52,6 +52,11 @@
           <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-mapper-asl:1.9.2" />
           <element id="library" level="project" name="Maven: org.codehaus.jackson:jackson-xc:1.9.2" />
           <element id="library" level="project" name="Maven: org.codehaus.jettison:jettison:1.1" />
+          <element id="library" level="project" name="Maven: commons-codec:commons-codec:1.9" />
+          <element id="library" level="project" name="Maven: org.apache.oltu.oauth2:org.apache.oltu.oauth2.authzserver:1.0.2" />
+          <element id="library" level="project" name="Maven: org.apache.oltu.oauth2:org.apache.oltu.oauth2.common:1.0.2" />
+          <element id="library" level="project" name="Maven: org.apache.oltu.oauth2:org.apache.oltu.oauth2.resourceserver:1.0.2" />
+          <element id="library" level="project" name="Maven: org.json:json:20140107" />
         </element>
       </element>
     </root>
