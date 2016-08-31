@@ -5,7 +5,7 @@ package com.sxtc.ccweb.base;
  */
 public class AuthorizationException extends RuntimeException {
 
-    //private String response= ErrorCode.NOT_AUTHED.getMsg();
+    // private String response= ErrorCode.NOT_AUTHED.getMsg();
     private String response = "";
 
     public String getResponse() {
