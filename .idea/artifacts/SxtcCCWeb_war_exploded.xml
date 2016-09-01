@@ -58,6 +58,7 @@
           <element id="library" level="project" name="Maven: org.apache.oltu.oauth2:org.apache.oltu.oauth2.resourceserver:1.0.2" />
           <element id="library" level="project" name="Maven: org.json:json:20140107" />
           <element id="library" level="project" name="Maven: javax.ws.rs:javax.ws.rs-api:2.0.1" />
+          <element id="library" level="project" name="Maven: javax.servlet:servlet-api:2.5" />
         </element>
       </element>
     </root>

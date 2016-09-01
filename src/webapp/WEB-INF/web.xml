@@ -4,24 +4,6 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
 
-    <filter>
-        <filter-name>CharacterEncodingFilter</filter-name>
-        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
-        <init-param>
-            <param-name>encoding</param-name>
-            <param-value>utf-8</param-value>
-        </init-param>
-        <init-param>
-            <param-name>forceEncoding</param-name>
-            <param-value>true</param-value>
-        </init-param>
-    </filter>
-
-    <filter-mapping>
-        <filter-name>CharacterEncodingFilter</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>
-
     <display-name>华为平台WEB</display-name>
 
     <listener>
@@ -47,4 +29,35 @@
     <welcome-file-list>
         <welcome-file>readme.txt</welcome-file>
     </welcome-file-list>
+
+
+
+    <filter>
+        <filter-name>CharacterEncodingFilter</filter-name>
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>utf-8</param-value>
+        </init-param>
+        <init-param>
+            <param-name>forceEncoding</param-name>
+            <param-value>true</param-value>
+        </init-param>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>CharacterEncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <!-- OAuth Server ACCESSTOKEN验证过滤器 -->
+    <filter>
+        <filter-name>oauth2</filter-name>
+        <filter-class>com.sxtc.ccweb.web.filter.Oauth2Filter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>oauth2</filter-name>
+        <url-pattern>/openapi/*</url-pattern>
+    </filter-mapping>
+
 </web-app>
