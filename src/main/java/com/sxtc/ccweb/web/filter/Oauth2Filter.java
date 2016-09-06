@@ -34,9 +34,8 @@ public class Oauth2Filter implements Filter {
         HttpServletResponse res = (HttpServletResponse) servletResponse;
         try {
             //构建OAUTH资源请求
-//            OAuthAccessResourceRequest oauthRequest = new OAuthAccessResourceRequest((HttpServletRequest) servletRequest, ParameterStyle.QUERY);   //queryString 方法获取参数
-//access_token  04cab239-9d11-44a0-af58-742c5f6046da
-            OAuthAccessResourceRequest oauthRequest = new OAuthAccessResourceRequest((HttpServletRequest) servletRequest, ParameterStyle.HEADER);   //从httphead头中获取参数
+            OAuthAccessResourceRequest oauthRequest = new OAuthAccessResourceRequest((HttpServletRequest) servletRequest, ParameterStyle.QUERY);   //queryString 方法获取参数  GET方法
+            //OAuthAccessResourceRequest oauthRequest = new OAuthAccessResourceRequest((HttpServletRequest) servletRequest, ParameterStyle.HEADER);   //从httphead头中获取参数 POST方法
             String accessToken = oauthRequest.getAccessToken();
             System.out.print(accessToken);
 
@@ -69,7 +68,6 @@ public class Oauth2Filter implements Filter {
         HttpURLConnection connection = (HttpURLConnection) url.openConnection();
         connection.setRequestMethod("POST");
         connection.disconnect();
-        int mycode = connection.getResponseCode();
         return HttpServletResponse.SC_OK == connection.getResponseCode();
     }
 

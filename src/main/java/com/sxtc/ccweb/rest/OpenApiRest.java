@@ -31,6 +31,14 @@ public class OpenApiRest {
         return datas;
     }
 
+    @POST
+    @Path("/query")
+    @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
+    public List<User> queryUserPost() {
+        List<User> datas = userService.findUsers();
+        return datas;
+    }
+
     @GET
     @Path("{userid}")
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML})
