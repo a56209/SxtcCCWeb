@@ -5,4 +5,5 @@ package com.sxtc.ccweb.dao.impl;
  */
 public class Test {
     //修正
+    private Integer testInt;
 }
