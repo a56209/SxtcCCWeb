@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.Result;
 import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
+import redis.clients.jedis.BinaryClient;
 
 import java.util.List;
 
@@ -17,6 +18,8 @@ public interface NsOperaterDao {
     List<User> findAllUsers();
 
     User findUserById(Integer userId);
+
+    List<User> findUserByUserData(User user);
 
     int addUser(User user);
 

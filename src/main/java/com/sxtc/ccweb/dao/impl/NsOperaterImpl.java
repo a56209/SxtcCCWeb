@@ -27,6 +27,12 @@ public class NsOperaterImpl extends CCSqlDaoSupport implements NsOperaterDao {
         return session.selectOne("findUserById", userId);
     }
 
+    public List<User> findUserByUserData(User user) {
+        SqlSession session = getSqlSession();
+        List<User> listData = session.selectList("findUserByUserdata", user);
+        return listData;
+    }
+
     public int addUser(User user) {
         SqlSession session = getSqlSession();
         return session.insert("addNewUser", user);
@@ -37,7 +43,7 @@ public class NsOperaterImpl extends CCSqlDaoSupport implements NsOperaterDao {
         return session.update("updateUser", user);
     }
 
-//    @Transactional(readOnly = false, propagation = Propagation.SUPPORTS)
+    //    @Transactional(readOnly = false, propagation = Propagation.SUPPORTS)
     public int delUser(Integer userId) {
         SqlSession session = getSqlSession();
         return session.delete("delUser", userId);

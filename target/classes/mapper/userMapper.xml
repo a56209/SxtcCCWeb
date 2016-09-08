@@ -17,6 +17,13 @@
         SELECT OP_ID,OP_NAME,OP_PSW FROM NS_OPERATOR_INFO WHERE OP_ID=#{userid}
     </select>
 
+    <select id="findUserByUserdata" resultMap="userInforesultMap" parameterType="com.sxtc.ccweb.model.User">
+        SELECT OP_ID,OP_NAME,OP_PSW FROM NS_OPERATOR_INFO WHERE 1=1
+        <if test="userId!=null and userId>0"> AND OP_ID=#{userId} </if>
+        <if test="userName!=null and userName!=''"> AND OP_NAME=#{userName} </if>
+        <if test="userPwd!=null and userPwd !=''" > AND OP_PSW=#{userPwd} </if>
+    </select>
+
     <insert id="addNewUser" parameterType="com.sxtc.ccweb.model.User" keyProperty="userId" useGeneratedKeys="false">
          INSERT INTO NS_OPERATOR_INFO (OP_ID,OP_NAME,APP_ID,ROLE_ID,IS_ACTIVE,OP_INDEX,OP_PSW)  SELECT NVL(MAX(OP_ID),0)+1,#{userName},0,1,1,1,#{userPwd} FROM NS_OPERATOR_INFO
     </insert>
@@ -24,8 +31,8 @@
     <update id="updateUser" parameterType="com.sxtc.ccweb.model.User" keyProperty="userId">
         UPDATE NS_OPERATOR_INFO
         <trim prefix="set" suffixOverrides=",">
-            <if test="userName!=null and userName!=''">OP_NAME=#{userName},</if>
-            <if test="userPwd!=null and userPwd !=''">OP_PSW=#{userPwd}</if>
+            <if test="userName!=null and userName!=''"> OP_NAME=#{userName} </if>
+            <if test="userPwd!=null and userPwd !=''"> OP_PSW=#{userPwd} </if>
         </trim>
         WHERE OP_ID=#{userId}
     </update>
