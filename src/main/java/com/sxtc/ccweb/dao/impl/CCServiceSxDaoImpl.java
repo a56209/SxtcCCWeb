@@ -33,7 +33,9 @@ public class CCServiceSxDaoImpl extends CCSqlDaoSupport implements CCServiceSxDa
      * @return
      */
     public int updateCCServiceSx(CCServiceSx ccServiceSx) {
-        return 0;
+        SqlSession session = getSqlSession();
+        int ret = session.update("updateServiceSx", ccServiceSx);
+        return ret;
     }
 
     /**

@@ -5,20 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b3b68320-0dd5-4acf-8f6d-e57e7382edc3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/sxtc/ccweb/dao/CCServiceSxDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/sxtc/ccweb/dao/impl/CCServiceSxDaoImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/sxtc/ccweb/model/CCServiceSx.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/sxtc/ccweb/rest/CCServiceSxRest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/sxtc/ccweb/service/CCServiceSxService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/sxtc/ccweb/service/impl/CCServiceSxServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ccServiceSxMapper.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/sxtc/ccweb/dao/impl/Test.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sxtc/ccweb/rest/LoginRest.java" afterPath="$PROJECT_DIR$/src/main/java/com/sxtc/ccweb/rest/LoginRest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/spring/mybatis-config.xml" afterPath="$PROJECT_DIR$/src/main/resources/spring/mybatis-config.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sxtc/ccweb/dao/impl/CCServiceSxDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/sxtc/ccweb/dao/impl/CCServiceSxDaoImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sxtc/ccweb/rest/CCServiceSxRest.java" afterPath="$PROJECT_DIR$/src/main/java/com/sxtc/ccweb/rest/CCServiceSxRest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sxtc/ccweb/service/CCServiceSxService.java" afterPath="$PROJECT_DIR$/src/main/java/com/sxtc/ccweb/service/CCServiceSxService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/sxtc/ccweb/service/impl/CCServiceSxServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/sxtc/ccweb/service/impl/CCServiceSxServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mapper/ccServiceSxMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/ccServiceSxMapper.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/webapp/WEB-INF/index.html" afterPath="$PROJECT_DIR$/src/webapp/WEB-INF/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/webapp/WEB-INF/login.html" afterPath="$PROJECT_DIR$/src/webapp/WEB-INF/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/spring/mybatis-config.xml" afterPath="$PROJECT_DIR$/target/classes/spring/mybatis-config.xml" />
     </list>
     <ignored path="SxtcCCWeb.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,85 +41,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/webapp/WEB-INF/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="19" column="43" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CCServiceSxService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/sxtc/ccweb/service/CCServiceSxService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CCServiceSxServiceImpl.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/sxtc/ccweb/service/impl/CCServiceSxServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="22" column="41" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ccServiceSxMapper.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ccServiceSxMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="47" column="139" selection-start-line="47" selection-start-column="139" selection-end-line="47" selection-end-column="139" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OpenApiRest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/sxtc/ccweb/rest/OpenApiRest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="26" column="17" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/sxtc/ccweb/model/User.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CCServiceSx.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/sxtc/ccweb/model/CCServiceSx.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="21" column="7" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="CCServiceSxRest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/sxtc/ccweb/rest/CCServiceSxRest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="26" column="43" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
+            <state relative-caret-position="580">
+              <caret line="52" column="18" selection-start-line="52" selection-start-column="11" selection-end-line="52" selection-end-column="18" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -134,33 +53,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserRest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/sxtc/ccweb/rest/UserRest.java">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/webapp/WEB-INF/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="71" column="41" selection-start-line="71" selection-start-column="41" selection-end-line="71" selection-end-column="41" />
+            <state relative-caret-position="333">
+              <caret line="34" column="55" selection-start-line="34" selection-start-column="55" selection-end-line="34" selection-end-column="55" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="userMapper.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/userMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="32" column="13" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="13" />
-              <folding>
-                <marker date="1473321596581" expanded="true" signature="517:566" ph="SELECT OP_ID... NS_OPERATOR_INFO" />
-                <marker date="1473321596581" expanded="true" signature="675:746" ph="SELECT OP_ID... NS_OPERATOR_INFO" />
-                <marker date="1473321596581" expanded="true" signature="879:938" ph="SELECT OP_ID... NS_OPERATOR_INFO" />
-                <marker date="1473321596581" expanded="true" signature="879:1004" ph="SELECT OP_ID... NS_OPERATOR_INFO" />
-                <marker date="1473321596581" expanded="true" signature="879:1086" ph="SELECT OP_ID... NS_OPERATOR_INFO" />
-                <marker date="1473321596581" expanded="true" signature="879:1166" ph="SELECT OP_ID... NS_OPERATOR_INFO" />
-                <marker date="1473321596581" expanded="true" signature="1314:1480" ph="INSERT INTO NS_OPERATOR_INFO... " />
-                <marker date="1473321596581" expanded="true" signature="1401:1480" ph="SELECT NVL(M... NS_OPERATOR_INFO" />
-                <marker date="1473321596581" expanded="true" signature="1596:1874" ph="UPDATE NS_OP... " />
-                <marker date="1473321596581" expanded="true" signature="1959:2009" ph="DELETE FROM " />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -242,13 +140,13 @@
         <option value="$PROJECT_DIR$/src/main/java/com/sxtc/ccweb/dao/CCServiceSxDao.java" />
         <option value="$PROJECT_DIR$/src/main/resources/spring/mybatis-config.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/sxtc/ccweb/dao/impl/CCServiceSxImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/sxtc/ccweb/dao/impl/CCServiceSxDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/sxtc/ccweb/rest/CCServiceSxRest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sxtc/ccweb/model/CCServiceSx.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/ccServiceSxMapper.xml" />
-        <option value="$PROJECT_DIR$/src/webapp/WEB-INF/index.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/sxtc/ccweb/service/impl/CCServiceSxServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sxtc/ccweb/dao/impl/CCServiceSxDaoImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/sxtc/ccweb/service/CCServiceSxService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sxtc/ccweb/service/impl/CCServiceSxServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/sxtc/ccweb/rest/CCServiceSxRest.java" />
+        <option value="$PROJECT_DIR$/src/webapp/WEB-INF/index.html" />
       </list>
     </option>
   </component>
@@ -3220,7 +3118,7 @@
       <workItem from="1473230482100" duration="12272000" />
       <workItem from="1473297128442" duration="6987000" />
       <workItem from="1473317696544" duration="13555000" />
-      <workItem from="1473385034885" duration="17093000" />
+      <workItem from="1473385034885" duration="19340000" />
     </task>
     <task id="LOCAL-00001" summary="oauth加入">
       <created>1472634467932</created>
@@ -3292,11 +3190,18 @@
       <option name="project" value="LOCAL" />
       <updated>1473333211811</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="关联新的service_list表">
+      <created>1473412855501</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1473412855501</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="180616000" />
+    <option name="totallyTimeSpent" value="182863000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -3327,7 +3232,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15298508" sideWeight="0.49434572" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22547974" sideWeight="0.49434572" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20255864" sideWeight="0.5056543" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -3366,7 +3271,8 @@
     <MESSAGE value="html测试" />
     <MESSAGE value="引入bootstrap" />
     <MESSAGE value="表单提交" />
-    <option name="LAST_COMMIT_MESSAGE" value="表单提交" />
+    <MESSAGE value="关联新的service_list表" />
+    <option name="LAST_COMMIT_MESSAGE" value="关联新的service_list表" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -3685,30 +3591,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sxtc/ccweb/dao/impl/NsOperaterImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="31" column="45" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sxtc/ccweb/dao/impl/CCServiceSxDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#860#861#0" expanded="true" />
-            <element signature="e#884#885#0" expanded="true" />
-            <element signature="e#1029#1030#0" expanded="true" />
-            <element signature="e#1056#1057#0" expanded="true" />
-            <element signature="e#1219#1220#0" expanded="true" />
-            <element signature="e#1246#1247#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/webapp/WEB-INF/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
@@ -3759,16 +3641,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/sxtc/ccweb/rest/CCServiceSxRest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="26" column="43" selection-start-line="26" selection-start-column="43" selection-end-line="26" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sxtc/ccweb/model/CCServiceSx.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
@@ -3781,8 +3653,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/userMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="32" column="13" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="13" />
+        <state relative-caret-position="475">
+          <caret line="34" column="40" selection-start-line="34" selection-start-column="40" selection-end-line="34" selection-end-column="40" />
           <folding>
             <marker date="1473321596581" expanded="true" signature="517:566" ph="SELECT OP_ID... NS_OPERATOR_INFO" />
             <marker date="1473321596581" expanded="true" signature="675:746" ph="SELECT OP_ID... NS_OPERATOR_INFO" />
@@ -3798,37 +3670,68 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ccServiceSxMapper.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sxtc/ccweb/dao/impl/NsOperaterImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="47" column="139" selection-start-line="47" selection-start-column="139" selection-end-line="47" selection-end-column="139" />
+        <state relative-caret-position="437">
+          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/webapp/WEB-INF/index.html">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/ccServiceSxMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="19" column="43" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
-          <folding />
+        <state relative-caret-position="380">
+          <caret line="53" column="31" selection-start-line="53" selection-start-column="16" selection-end-line="53" selection-end-column="31" />
+          <folding>
+            <marker date="1473413982416" expanded="true" signature="3654:3679" ph="UPDATE CC_SE... " />
+            <marker date="1473413982416" expanded="true" signature="3654:5617" ph="UPDATE CC_SE... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sxtc/ccweb/dao/impl/CCServiceSxDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="35" column="45" selection-start-line="35" selection-start-column="45" selection-end-line="35" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sxtc/ccweb/service/CCServiceSxService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        <state relative-caret-position="304">
+          <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/sxtc/ccweb/service/impl/CCServiceSxServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="22" column="41" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
+        <state relative-caret-position="608">
+          <caret line="40" column="19" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="19" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/sxtc/ccweb/rest/CCServiceSxRest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="52" column="18" selection-start-line="52" selection-start-column="11" selection-end-line="52" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/webapp/WEB-INF/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="34" column="55" selection-start-line="34" selection-start-column="55" selection-end-line="34" selection-end-column="55" />
+          <folding />
         </state>
       </provider>
     </entry>
