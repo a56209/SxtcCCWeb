@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sxtc.ccweb.model.CCServiceSx">
+
+    <resultMap id="ccServiceSxInfoResultMap" type="com.sxtc.ccweb.model.CCServiceSx">
+        <id property="serviceId" column="SERVICE_ID"/>
+        <result property="callId" column="CALL_ID"/>
+        <result property="callerId" column="CALLER_ID"/>
+        <result property="simpleRec" column="SIMPLE_REC"/>
+        <result property="callDir" column="CALL_DIR"/>
+        <result property="customerId" column="CUSTOMER_ID"/>
+        <result property="custName" column="CUST_NAME"/>
+        <result property="contactPerson" column="CONTACT_PERSON"/>
+        <result property="contactPhone" column="CONTACT_PHONE"/>
+        <result property="agentId" column="AGENT_ID"/>
+        <result property="registerTime" column="REGISTER_TIME"/>
+        <result property="email" column="EMAIL"/>
+        <result property="recVoFile" column="REC_VOC_FILE"/>
+        <result property="confirmType" column="IS_CONFIRM_TYPE"/>
+        <result property="serviceResult" column="SERVICE_RESULT"/>
+        <result property="serviceResultTime" column="SERVICE_RESULT_TIME"/>
+        <result property="needFB" column="IS_NEED_FB"/>
+        <result property="secretRank" column="SECRET_RANK"/>
+        <result property="recStopTime" column="REC_STOP_TIME"/>
+        <result property="hwCallId" column="HW_CALL_ID"/>
+        <result property="releaseCause" column="RELEASE_CAUSE"/>
+        <result property="visitId" column="VISIT_ID"/>
+    </resultMap>
+
+    <sql id="CCServiceSxColumnsSql">
+        CC_SERVICE_LIST_SX.SERVICE_ID,CC_SERVICE_LIST_SX.CALL_ID,CC_SERVICE_LIST_SX.CALLER_ID,CC_SERVICE_LIST_SX.SIMPLE_REC,CC_SERVICE_LIST_SX.CALL_DIR,CC_SERVICE_LIST_SX.CUSTOMER_ID,
+        CC_SERVICE_LIST_SX.CUST_NAME,CC_SERVICE_LIST_SX.CONTACT_PERSON,CC_SERVICE_LIST_SX.CONTACT_PHONE,CC_SERVICE_LIST_SX.AGENT_ID,CC_SERVICE_LIST_SX.REGISTER_TIME,
+        CC_SERVICE_LIST_SX.EMAIL,CC_SERVICE_LIST_SX.REC_VOC_FILE,CC_SERVICE_LIST_SX.IS_CONFIRM_TYPE,CC_SERVICE_LIST_SX.SERVICE_RESULT,CC_SERVICE_LIST_SX.SERVICE_RESULT_TIME,
+        CC_SERVICE_LIST_SX.IS_NEED_FB,CC_SERVICE_LIST_SX.SECRET_RANK,CC_SERVICE_LIST_SX.REC_STOP_TIME,CC_SERVICE_LIST_SX.HW_CALL_ID,CC_SERVICE_LIST_SX.RELEASE_CAUSE,
+        CC_SERVICE_LIST_SX.VISIT_ID
+    </sql>
+
+    <insert id="addNewServiceSx" parameterType="com.sxtc.ccweb.model.CCServiceSx" keyProperty="serviceId"
+            useGeneratedKeys="false">
+        <selectKey keyProperty="serviceId" resultType="java.lang.Integer" order="BEFORE">
+            SELECT CC_SRV_LIST_SX_SEQ.NEXTVAL FROM DUAL
+        </selectKey>
+        INSERT INTO CC_SERVICE_LIST_SX(
+        <include refid="CCServiceSxColumnsSql"/>
+        )VALUES (
+        #{serviceId,jdbcType=NUMERIC},#{callId,jdbcType=NUMERIC },#{callerId,jdbcType=VARCHAR},#{simpleRec,jdbcType=NUMERIC},#{callDir,jdbcType=NUMERIC},#{customerId,jdbcType=NUMERIC},
+        #{custName,jdbcType=VARCHAR},#{contactPerson,jdbcType=VARCHAR},#{contactPhone,jdbcType=VARCHAR},#{agentId,jdbcType=VARCHAR},SYSDATE,#{email,jdbcType=VARCHAR},
+        #{recVoFile,jdbcType=VARCHAR},#{confirmType,jdbcType=NUMERIC},#{serviceResult,jdbcType=NUMERIC},#{serviceResultTime,jdbcType=DATE },#{needFB,jdbcType=NUMERIC},#{secretRank,jdbcType=NUMERIC},
+        #{recStopTime,jdbcType=DATE },#{hwCallId,jdbcType=VARCHAR},#{releaseCause,jdbcType=NUMERIC},#{visitId,jdbcType=VARCHAR}
+        )
+    </insert>
+
+</mapper>

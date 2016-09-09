@@ -17,16 +17,39 @@
     <script src="resources/js/jquery.form.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
-            $("form").success(function (e) {
-                alert(e);
+            $("form").submit(function () {
+                $.ajax(
+                        {
+                            type: "POST", url: "rest/login", data: $(this).serialize(),
+                            beforeSend: function (e) {
+                                $("#btnlogin").attr("disabled", true);
+                                $("#btnlogin").text("正在登录...")
+                            },
+                            success: function (e) {
+                                $("#btnlogin").attr("disabled", true);
+                                $("#btnlogin").text("登录成功");
+                                window.location.href = "index.html";
+                            },
+                            error: function (e) {
+                                alert(e.responseText);
+                                $("#btnlogin").attr("disabled", false);
+                                $("#btnlogin").text("正在登录")
+                            }
+                        }
+                );
+
+//                $.post("rest/login", $(this).serialize(), function (e) {
+//                    alert(e)
+//                })
+
+                return false;
             });
         });
     </script>
 </head>
 <body>
 <div class="container">
-    <form class="form-sign" role="form" name="loginform" action="rest/login" method="post"
-          enctype="application/x-www-form-urlencoded">
+    <form class="form-sign" role="form" name="loginform">
         <h2>欢迎登录华为平台系统</h2>
         <div class="form-group">
             <input type="text" class="form-control" placeholder="登录账号" id="userName" name="userName" autocomplete="off"
@@ -35,7 +58,7 @@
         <div class="form-group"><input type="password" class="form-control" placeholder="密码" id="userPwd"
                                        name="userPwd" required></div>
         <div class="form-group">
-            <button class="btn btn-lg btn-primary btn-block" type="submit">系统登录</button>
+            <button class="btn btn-lg btn-primary btn-block" type="submit" id="btnlogin">系统登录</button>
         </div>
     </form>
 </div>

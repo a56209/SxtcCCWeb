@@ -2,9 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge"/>
+    <meta name="viweport" content="width=device-width,initial-scale=1"/>
     <title>华为平台Restful</title>
+    <script src="resources/js/jquery-1.6.3.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#createServiceSx").click(function () {
+                var myserviceinfo = new Object();
+                myserviceinfo.callId = 1230;
+                myserviceinfo.simpleRec=1;
+                myserviceinfo.callDir=2;
+                myserviceinfo.agentId="cxy";
+                myserviceinfo.confirmType=0;
+                myserviceinfo.serviceResult=0;
+                myserviceinfo.needFB=0;
+                myserviceinfo.secretRank=0;
+                $.ajax({
+                    type: "POST", url: "rest/ccssx", data: JSON.stringify(myserviceinfo),dataType:"json",
+                    contentType: "application/json; charset=utf-8",
+                    success: function (e) {
+                    },
+                    error: function (e) {
+
+                    }
+                });
+            });
+        });
+    </script>
 </head>
 <body>
 <h3 style="margin:0 auto; width: 300px;">欢迎使用华为平台RESTFUL接口</h3>
+<input type="button" id="createServiceSx" value="创建Service记录"/>
 </body>
 </html>

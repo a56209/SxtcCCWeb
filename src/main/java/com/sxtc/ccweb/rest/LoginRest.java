@@ -51,8 +51,10 @@ public class LoginRest {
                 //账号验证失败
             }
         }
-        return null;
-
+        if (isVerify)
+            return Response.status(Response.Status.OK).entity("验证成功").build();
+        else
+            return Response.status(Response.Status.NOT_FOUND).entity("验证失败").build();
     }
 
 }
