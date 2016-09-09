@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge"/>
+    <meta name="viweport" content="width=device-width,initial-scale=1"/>
+    <title>华为平台系统登陆</title>
+    <link rel="stylesheet" href="resources/css/bootstrap.min.css">
+    <style>
+        .form-sign {
+            max-width: 330px;
+            padding: 15px;
+            margin: 0 auto;
+        }
+    </style>
+    <script src="resources/js/jquery-1.6.3.min.js"></script>
+    <script src="resources/js/jquery.form.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("form").submit(function () {
+                $.ajax(
+                        {
+                            type: "POST", url: "rest/login", data: $(this).serialize(),
+                            beforeSend: function (e) {
+                                $("#btnlogin").attr("disabled", true);
+                                $("#btnlogin").text("正在登录...")
+                            },
+                            success: function (e) {
+                                $("#btnlogin").attr("disabled", true);
+                                $("#btnlogin").text("登录成功");
+                                window.location.href = "index.html";
+                            },
+                            error: function (e) {
+                                alert(e.responseText);
+                                $("#btnlogin").attr("disabled", false);
+                                $("#btnlogin").text("正在登录")
+                            }
+                        }
+                );
+
+//                $.post("rest/login", $(this).serialize(), function (e) {
+//                    alert(e)
+//                })
+
+                return false;
+            });
+        });
+    </script>
+</head>
+<body>
+<div class="container">
+    <form class="form-sign" role="form" name="loginform">
+        <h2>欢迎登录华为平台系统</h2>
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="登录账号" id="userName" name="userName" autocomplete="off"
+                   required autofocus>
+        </div>
+        <div class="form-group"><input type="password" class="form-control" placeholder="密码" id="userPwd"
+                                       name="userPwd" required></div>
+        <div class="form-group">
+            <button class="btn btn-lg btn-primary btn-block" type="submit" id="btnlogin">系统登录</button>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

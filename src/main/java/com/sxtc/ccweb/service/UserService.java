@@ -14,6 +14,8 @@ public interface UserService {
 
     User findUserById(Integer userId);
 
+    List<User> findUserByData(User user);
+
     void addUserInfo(User user);
 
     void updateUserInfo(User user) throws Exception;

@@ -1,7 +1,5 @@
 package com.sxtc.ccweb.oauthclient;
 
-import com.sun.jersey.api.core.HttpRequestContext;
-import org.apache.oltu.oauth2.client.HttpClient;
 import org.apache.oltu.oauth2.client.OAuthClient;
 import org.apache.oltu.oauth2.client.URLConnectionClient;
 import org.apache.oltu.oauth2.client.request.OAuthClientRequest;
@@ -9,19 +7,15 @@ import org.apache.oltu.oauth2.client.response.OAuthAccessTokenResponse;
 import org.apache.oltu.oauth2.common.exception.OAuthProblemException;
 import org.apache.oltu.oauth2.common.exception.OAuthSystemException;
 import org.apache.oltu.oauth2.common.message.types.GrantType;
-import org.springframework.http.HttpRequest;
+import org.apache.oltu.oauth2.common.message.types.ResponseType;
 import org.springframework.stereotype.Component;
 
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletRequestWrapper;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletRequestWrapper;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
-import javax.ws.rs.client.Client;
-import javax.ws.rs.client.ClientBuilder;
-import javax.ws.rs.client.WebTarget;
-import javax.ws.rs.core.Request;
+//import javax.ws.rs.client.Client;
+//import javax.ws.rs.client.ClientBuilder;
+//import javax.ws.rs.client.Entity;
+//import javax.ws.rs.core.Form;
 import javax.ws.rs.core.Response;
 
 /**
@@ -31,10 +25,37 @@ import javax.ws.rs.core.Response;
 @Path("oauthclient")
 public class OauthClient {
 
+    /**
+     * 获取授权码
+     *
+     * @return
+     */
     @GET
     @Path("makeauth")
     public Response makeAuthCodeRequest() {
 
+        //创建表单、模拟填充表单并提交表单
+//        Form form = new Form();
+//        form.param("username", ClientParams.USERNAME);
+//        form.param("password", ClientParams.PASSWORD);
+//        form.param("client_id", ClientParams.CLIENT_ID);
+//        form.param("response_type", ResponseType.CODE.toString());
+//        form.param("redirect_uri", ClientParams.OAUTH_SERVER_REDIRECT_URL);
+//
+//        Client client = ClientBuilder.newClient();
+//        Response response = client.target(ClientParams.OAUTH_SERVER_URL)
+//                .request().post(Entity.form(form));
+//
+//        System.out.println(response.getStatus());
+//
+//        try {
+//            makeTokenRequestWithAuthCode(response.getEntity().toString());
+//        } catch (OAuthSystemException e) {
+//            e.printStackTrace();
+//        } catch (OAuthProblemException e) {
+//            e.printStackTrace();
+//        }
+//        return response;
         return null;
     }
 
@@ -72,11 +93,11 @@ public class OauthClient {
      * @param accessToken
      */
     private void getAuthedService(String accessToken) {
-        Client client = ClientBuilder.newClient();
-        Response response = client.target(ClientParams.OATUH_SERVICE_API).queryParam("access_token", accessToken).request().get();
+//        Client client = ClientBuilder.newClient();
+//        Response response = client.target(ClientParams.OATUH_SERVICE_API).queryParam("access_token", accessToken).request().get();
 
-        System.out.println(response.getStatus());
-        System.out.println(response.getEntity().toString());
+//        System.out.println(response.getStatus());
+//        System.out.println(response.getEntity().toString());
     }
 
 

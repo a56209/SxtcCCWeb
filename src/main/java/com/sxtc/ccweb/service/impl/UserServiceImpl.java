@@ -26,6 +26,10 @@ public class UserServiceImpl implements UserService {
         return nsOperaterDao.findUserById(userId);
     }
 
+    public List<User> findUserByData(User user) {
+        return nsOperaterDao.findUserByUserData(user);
+    }
+
     public void addUserInfo(User user) {
         nsOperaterDao.addUser(user);
     }

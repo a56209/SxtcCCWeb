@@ -6,6 +6,7 @@
     <!-- 配置连接数据库下表与pojo对象建立的ORM资源文件 -->
     <mappers>
         <mapper resource="mapper/userMapper.xml"/>
+        <mapper resource="mapper/ccServiceSxMapper.xml"/>
     </mappers>
 
 </configuration>

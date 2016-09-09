@@ -22,7 +22,7 @@ public class AccessToken {
     @POST
     @Path("/checkAccessToken")
     @Produces({MediaType.TEXT_PLAIN})
-    public Response checkAccessToken(@RequestParam("accessToken") String accessToken) {
+    public Response checkAccessToken(@RequestParam("access_token") String accessToken) {
         return Response.status(Response.Status.OK).entity("OK").build();    //HttpStatus.valueOf(HttpServletResponse.SC_OK)
     }
 
